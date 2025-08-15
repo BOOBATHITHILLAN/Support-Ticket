@@ -86,7 +86,7 @@ export default function TicketsPage() {
       </div>
 
       <TicketList tickets={tickets} onEdit={handleOpenEdit} />
-      <div className=" text-right">
+      <div className=" text-right mt-2">
         <button
           onClick={handleLogout}
           className="sm:hidden bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600"

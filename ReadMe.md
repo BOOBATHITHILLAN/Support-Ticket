@@ -37,88 +37,50 @@ A responsive full-stack web application where users can raise, view, and update 
 ## 🚀 Setup Instructions
 
 ### **1️⃣ Clone the Repository**
-```bash
-git clone https://github.com/yourusername/support-ticket-app.git
+git clone https://github.com/BOOBATHITHILLAN/support-ticket-app.git
 cd support-ticket-app
 2️⃣ Backend Setup
-bash
-Copy
-Edit
 cd backend
 Install dependencies
-bash
-Copy
-Edit
 npm install
+
+
 Configure .env
 Create a .env file in the backend folder:
 
-env
-Copy
-Edit
-DATABASE_URL="postgresql://postgres:<password>@localhost:5432/support_ticket_app?schema=public"
+DATABASE_URL="postgresql://postgres:<password>@localhost:5432/<DB_NAME>?schema=public"
 PORT=5000
+
+
 Start PostgreSQL locally (Windows)
 powershell
-Copy
-Edit
 & "C:\Program Files\PostgreSQL\17\bin\pg_ctl.exe" start -D "C:\Program Files\PostgreSQL\17\data"
 Create the database
-bash
-Copy
-Edit
+
 npx prisma migrate dev --name init
 Start backend
-bash
-Copy
-Edit
 npm run dev
-3️⃣ Frontend Setup
-bash
-Copy
-Edit
-cd frontend
-Create project using Vite
-bash
-Copy
-Edit
-npm create vite@latest frontend
-# Select: React + TypeScript
-Install dependencies
-bash
-Copy
-Edit
-npm install
-Install Tailwind CSS
-bash
-Copy
-Edit
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init
-Configure tailwind.config.js:
 
-js
-Copy
-Edit
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-Start frontend
-bash
-Copy
-Edit
+
+
+3️⃣ Frontend Setup
+
+cd frontend
+
+Install dependencies
+npm install
+
+
+Configure .env
+Create a .env file in the frontend folder:
+
+VITE_API_URL=http://localhost:5000/api
+
+
 npm run dev
 📂 Project Structure
 pgsql
-Copy
-Edit
+
 support-ticket-app/
 │
 ├── backend/

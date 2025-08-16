@@ -1,41 +1,42 @@
-services:
-  backend:
-    build:
-      context: .
-      dockerfile: docker/backend.Dockerfile
-    container_name: support-ticket-backend
-    ports:
-      - "5000:5000"
-    env_file:
-      - backend/.env
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
-    depends_on:
-      - db
+# Docker not working
+# services:
+#   backend:
+#     build:
+#       context: .
+#       dockerfile: docker/backend.Dockerfile
+#     container_name: support-ticket-backend
+#     ports:
+#       - "5000:5000"
+#     env_file:
+#       - backend/.env
+#     volumes:
+#       - ./backend:/app
+#       - /app/node_modules
+#     depends_on:
+#       - db
 
-  frontend:
-    build:
-      context: .
-      dockerfile: docker/frontend.Dockerfile
-    container_name: support-ticket-frontend
-    ports:
-      - "3000:80"
-    depends_on:
-      - backend
+#   frontend:
+#     build:
+#       context: .
+#       dockerfile: docker/frontend.Dockerfile
+#     container_name: support-ticket-frontend
+#     ports:
+#       - "3000:80"
+#     depends_on:
+#       - backend
 
-  db:
-    image: postgres:16
-    container_name: support-ticket-db
-    restart: always
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: support_ticket_app
-    ports:
-      - "5432:5432"
-    volumes:
-      - db_data:/var/lib/postgresql/data
+#   db:
+#     image: postgres:16
+#     container_name: support-ticket-db
+#     restart: always
+#     environment:
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSWORD: postgres
+#       POSTGRES_DB: support_ticket_app
+#     ports:
+#       - "5432:5432"
+#     volumes:
+#       - db_data:/var/lib/postgresql/data
 
-volumes:
-  db_data:
+# volumes:
+#   db_data:
